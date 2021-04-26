@@ -1,7 +1,22 @@
 import { StyleSheet } from 'react-native';
 
 export default styles = StyleSheet.create({
-  container: {
+  btnContainer: {
 
+  },
+  secondaryContainer: {
+
+  },
+  btnBlock: {
+
+  },
+  textStyle: {
+
+  },
+  btnDisabled: {
+
+  },
+  btnChildren: {
+    flexDirection: 'row',
   },
 });
