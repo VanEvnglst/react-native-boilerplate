@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View } from 'react-native';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/lib/integration/react';
+
+import SplashScreen from 'react-native-splash-screen';
 import createStore from './store';
-// import SplashScreen from 'react-native-splash-screen';
 
 
 const { store, persistor } = createStore();
 
 const App = () => {
+  useEffect(() => {
+    SplashScreen.hide();
+  }, []);
   return (
     <Provider store={store}>
       {/*
