@@ -1,18 +1,23 @@
 import React, { useEffect } from 'react';
-import { View } from 'react-native';
 import { Provider } from 'react-redux';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { PersistGate } from 'redux-persist/lib/integration/react';
-
 import SplashScreen from 'react-native-splash-screen';
 import createStore from './store';
+import SignInContainer from './containers/sign-in';
 
 
 const { store, persistor } = createStore();
 
 const App = () => {
+
   useEffect(() => {
     SplashScreen.hide();
   }, []);
+
+  const Stack = createStackNavigator();
+
   return (
     <Provider store={store}>
       {/*
@@ -22,9 +27,13 @@ const App = () => {
         for example "loading={<SplashScreen />}"
       */}
       <PersistGate loading={null} persistor={persistor}>
-        {/* <RootScreen /> */}
-        <View
-          style={{ flex: 1, backgroundColor: 'red'}}/>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name="Sign in" component={SignInContainer}/>
+          </Stack.Navigator>
+        </NavigationContainer>
+        {/* <View
+          style={{ flex: 1, backgroundColor: 'red'}}/> */}
       </PersistGate>
     </Provider>
   );
