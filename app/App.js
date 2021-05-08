@@ -29,7 +29,13 @@ const App = () => {
       <PersistGate loading={null} persistor={persistor}>
         <NavigationContainer>
           <Stack.Navigator>
-            <Stack.Screen name="Sign in" component={SignInContainer}/>
+            <Stack.Screen 
+              name="Sign in" 
+              component={SignInContainer}
+              options={{
+                headerShown: false
+              }}
+            />
           </Stack.Navigator>
         </NavigationContainer>
         {/* <View
