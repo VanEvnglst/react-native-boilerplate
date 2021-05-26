@@ -1,0 +1,11 @@
+{
+  "editor.tabSize": 2,
+  "editor.fontSize": 13,
+  "editor.tabCompletion": "on",
+  "editor.wordWrap": "on",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorBlinking": "expand",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay"
+}
